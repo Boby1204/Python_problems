@@ -1,0 +1,28 @@
+# number of guesses should be 9 also print number of guesses
+#take user input and tell it is greater or smaller or the correct number and tell the number of guesses
+print("welcome!! to number guessing game")
+num = 14
+guess: int = 9
+count=0
+while(guess >0):
+    count = count +1
+    num1 = int(input("enter the number you want to guess:"))
+    if num == num1:
+        print("Congo!! you guessed the number in",count,"try")
+        break
+    elif num > num1:
+        print("you guessed a smaller number")
+        guess = guess -1
+        if guess > 0:
+            print("you are left with",guess,"guesses")
+        else :
+            print("Sorry!! no guesses left.")
+            print("you lost the game")
+    elif num < num1:
+        print("you entered a larger number")
+        guess = guess -1
+        if guess > 0:
+            print("you are left with", guess, "guesses")
+        else:
+            print("Sorry!! no guesses left.")
+            print("Game over!!! you lost the game")
