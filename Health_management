@@ -1,0 +1,100 @@
+# Health Management System 
+# You have 3 clients - Boby, Rohan, Mish 
+# You have to manage diet and exercise for clients using files 
+
+import datetime
+def gettime():
+    return datetime.datetime.now()
+
+def set_data(k):
+    if k ==  1:
+        inp = int(input("What action do you want to perform:\n1. for exercise \n2.for diet"))
+        if inp == 1:
+            value = input("Enter data here:")
+            with open("boby_ex.txt","a") as f:
+                f.write(str([str(gettime())])+":" + value + "\n")
+                print("successfully written")
+        elif inp == 2:
+            value = input("Enter data here:")
+            with open("boby_diet.txt","a") as f:
+                f.write(str([str(gettime())])+":" + value + "\n")
+                print("successfully written")
+        else:
+            print("INVALID CHOICE!!")
+    elif k==2:
+        inp = int(input("What action do you want to perform:\n1. for exercise \n2.for diet"))
+        if inp ==1:
+            with open("boby_ex.txt","a") as f:
+                value = input("Enter data here:")
+                f.write(str([str(gettime())])+":" + value + "\n")
+                print("successfully written")
+        elif inp ==2:
+            with open("rohan_diet.txt","a") as f:    
+                value = input("Enter data here:")
+                f.write(str([str(gettime())])+":" + value + "\n")
+                print("successfully written")
+        else:
+            print("INVALID CHOICE!!")
+    elif k==3:
+        inp = int(input("What action do you want to perform:\n1. for exercise \n2.for diet"))
+        if inp ==1:
+            with open("mish_ex.txt","a") as f:
+                value = input("Enter data here:")
+                f.write(str([str(gettime())])+":" + value + "\n")
+                print("successfully written")
+        elif inp ==2:
+            with open("mish_diet.txt","a") as f: 
+                value = input("Enter data here:")   
+                f.write(str([str(gettime())])+":" + value + "\n")
+                print("successfully written")
+        else:
+            print("INVALID CHOICE!!")
+    else:
+        print("INVALID CHOICE!!!")
+                  
+def get_data(k):
+    if k == 1:
+        ans = int(input("What action do you want to perform:\n1. for exercise \n2.for diet"))
+        if ans == 1:
+            with open("boby_ex.txt") as f:
+                for i in f:
+                    print(i,end="")
+        elif ans == 2:
+            with open("boby_diet.txt") as f:
+                for i in f:
+                    print(i,end="")
+        else:
+            print("INVALID CHOICE!!")
+    elif k ==2:
+        ans = int(input("What action do you want to perform:\n1. for exercise \n2.for diet"))
+        if ans == 1:
+            with open("rohan_ex.txt") as f:
+                for i in f:
+                    print(i,end="")
+        elif ans == 2:
+            with open("rohan_diet.txt") as f:
+                for i in f:
+                    print(i,end="")
+        else:
+            print("INVALID CHOICE!!!")
+    elif k ==3:
+        ans = int(input("What action do you want to perform:\n1. for exercise \n2.for diet"))
+        if ans == 1:
+            with open("mish_ex.txt") as f:
+                for i in f:
+                    print(i,end="")
+        elif ans == 2:
+            with open("mish_diet.txt") as f:
+                for i in f:
+                    print(i,end="")
+        else:
+            print("INVALID CHOICE!!!")
+
+print("Welcome to my health management system")
+ans = int(input("Press 1 for loging data and \n 2 for retrieving data:"))
+if ans == 1 :
+    c = int(input("Press 1 for Boby \n 2 for Rohan \n 3 for Mish \t"))
+    set_data(c)
+else:
+    c = int(input("Press 1 for Boby \n 2 for Rohan \n 3 for Mish \t"))
+    get_data(c)
